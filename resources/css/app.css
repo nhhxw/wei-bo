@@ -33,3 +33,6 @@ footer img.brand-icon {
     height: 17px;
 }
 
+.float-right {
+    float: right;
+}

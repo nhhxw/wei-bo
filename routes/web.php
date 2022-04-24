@@ -1,7 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UsersController;
 use App\Http\Controllers\StaticPagesController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,10 +15,10 @@ use App\Http\Controllers\StaticPagesController;
 |
 */
 
-//Route::get('/', function () {
-//    return view('welcome');
 //});
 
-Route::get('/', [StaticPagesController::class, 'home']);
-Route::get('/help', [StaticPagesController::class, 'help']);
-Route::get('/about', [StaticPagesController::class, 'about']);
+Route::get('/', [StaticPagesController::class, 'home'])->name('home');
+Route::get('/help', [StaticPagesController::class, 'help'])->name('help');
+Route::get('/about', [StaticPagesController::class, 'about'])->name('about');
+
+Route::get('signup', [UsersController::class, 'create'])->name('signup');
